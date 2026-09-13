@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>João Leonel Brizola — Bases e Sugestões Para Uma Nova Política</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&amp;family=Barlow:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F4F6FA; font-family: Barlow, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #003B77; text-decoration: none; }
+  a:hover { color: #D10504; }
+  ::selection { background: #FAD200; color: #002A55; }
+  @keyframes drift { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
+  @keyframes bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-9px) } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(22px) } to { opacity: 1; transform: translateY(0) } }
+  @keyframes pulseDot { 0%,100% { opacity: .25; transform: scale(1) } 50% { opacity: 1; transform: scale(1.6) } }
+  html { scroll-behavior: smooth; }
+</style>
+</helmet>
+
+<div style="background:#F4F6FA; color:#12203a; overflow-x:hidden">
+
+  <div data-progress="" style="position:fixed; top:0; left:0; height:4px; width:0%; background:linear-gradient(90deg,#098C40,#FAD200,#D10504); z-index:200; transition:width .1s linear"></div>
+
+  <header data-nav="" style="position:fixed; top:0; left:0; right:0; z-index:150; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px clamp(16px,4vw,48px); background:rgba(0,42,85,0); backdrop-filter:blur(0px); transition:background .35s ease, padding .35s ease, box-shadow .35s ease">
+    <a href="#topo" style="display:flex; align-items:center; gap:12px">
+      <img src="assets/logo.png" alt="João Leonel Brizola" data-navlogo="" style="height:44px; width:auto; display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,.25)); transition:height .35s ease">
+    </a>
+    <nav data-navlinks="" style="display:flex; align-items:center; gap:clamp(10px,1.8vw,26px); flex-wrap:wrap; justify-content:flex-end">
+      <a href="#eixo-1" data-spy="eixo-1" style="font-family:Archivo,sans-serif; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.72); transition:color .25s" style-hover="color:#FAD200">Educação</a>
+      <a href="#eixo-2" data-spy="eixo-2" style="font-family:Archivo,sans-serif; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.72); transition:color .25s" style-hover="color:#FAD200">Saúde</a>
+      <a href="#eixo-3" data-spy="eixo-3" style="font-family:Archivo,sans-serif; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.72); transition:color .25s" style-hover="color:#FAD200">Democracia</a>
+      <a href="#eixo-4" data-spy="eixo-4" style="font-family:Archivo,sans-serif; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.72); transition:color .25s" style-hover="color:#FAD200">Soberania</a>
+      <a href="#assinatura" style="font-family:Archivo,sans-serif; font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#002A55; background:#FAD200; padding:10px 18px; border-radius:999px; transition:transform .25s, box-shadow .25s" style-hover="transform:translateY(-2px); box-shadow:0 8px 20px rgba(250,210,0,.4); color:#002A55">Participe</a>
+    </nav>
+  </header>
+
+  <section id="topo" style="position:relative; min-height:100svh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:140px clamp(20px,6vw,80px) 120px; background:radial-gradient(120% 90% at 50% 0%, #0a4e94 0%, #003B77 45%, #002A55 100%); overflow:hidden">
+
+    <div data-wave="" style="position:absolute; left:-10%; right:-10%; bottom:0; height:46%; opacity:.5; pointer-events:none">
+      <svg viewBox="0 0 1200 300" preserveAspectRatio="none" style="position:absolute; inset:0; width:100%; height:100%">
+        <path d="M0,190 C220,110 420,250 640,180 C860,110 1040,180 1200,140 L1200,300 L0,300 Z" fill="#098C40" opacity="0.85"></path>
+        <path d="M0,225 C230,155 430,285 660,215 C880,150 1050,215 1200,180 L1200,300 L0,300 Z" fill="#FAD200" opacity="0.9"></path>
+        <path d="M0,258 C240,200 440,310 670,250 C890,195 1060,250 1200,220 L1200,300 L0,300 Z" fill="#098C40"></path>
+      </svg>
+    </div>
+
+    <div style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; max-width:1000px">
+      <img src="assets/logo.png" alt="João Leonel Brizola" style="width:min(460px,72vw); height:auto; display:block; filter:drop-shadow(0 20px 44px rgba(0,0,0,.45)); animation:bob 6s ease-in-out infinite">
+
+      <p style="margin:34px 0 0; font-family:Archivo,sans-serif; font-size:clamp(11px,1.2vw,14px); font-weight:800; letter-spacing:.34em; text-transform:uppercase; color:#FAD200">CANDIDATURA · PSB/RJ · 2026</p>
+
+      <h1 style="margin:18px 0 0; font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(38px,6.4vw,84px); line-height:.98; letter-spacing:-.025em; color:#fff; text-wrap:balance">Bases e Sugestões<br>Para Uma <span style="color:#FAD200">Nova Política</span></h1>
+
+      <p style="margin:26px 0 0; max-width:660px; font-size:clamp(17px,1.6vw,21px); line-height:1.6; color:rgba(255,255,255,.82); text-wrap:pretty">Guia de propostas do médico sanitarista João Leonel Brizola. Quatro eixos para atualizar o trabalhismo brasileiro diante dos desafios do século XXI.</p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:38px">
+        <a href="#introducao" style="font-family:Archivo,sans-serif; font-weight:800; font-size:15px; letter-spacing:.06em; text-transform:uppercase; color:#002A55; background:#fff; padding:16px 30px; border-radius:999px; transition:transform .25s, box-shadow .25s" style-hover="transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,0,0,.3); color:#002A55">Ler o guia</a>
+        <a href="#eixos" style="font-family:Archivo,sans-serif; font-weight:800; font-size:15px; letter-spacing:.06em; text-transform:uppercase; color:#fff; border:2px solid rgba(255,255,255,.45); padding:14px 30px; border-radius:999px; transition:border-color .25s, background .25s" style-hover="border-color:#FAD200; background:rgba(250,210,0,.12); color:#fff">Ver os 4 eixos</a>
+      </div>
+    </div>
+
+    <div style="position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:3; display:flex; flex-direction:column; align-items:center; gap:8px">
+      <span style="font-family:Archivo,sans-serif; font-size:10px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:rgba(255,255,255,.6)">Role</span>
+      <span style="width:8px; height:8px; border-radius:50%; background:#FAD200; animation:pulseDot 2s ease-in-out infinite"></span>
+    </div>
+  </section>
+
+  <section id="introducao" style="padding:clamp(80px,10vw,140px) clamp(20px,6vw,80px); background:#fff">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(32px,5vw,72px); align-items:start">
+      <div data-reveal="">
+        <p style="margin:0; font-family:Archivo,sans-serif; font-size:12px; font-weight:800; letter-spacing:.3em; text-transform:uppercase; color:#D10504">Introdução</p>
+        <h2 style="margin:14px 0 0; font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(30px,4.2vw,54px); line-height:1.02; letter-spacing:-.02em; color:#003B77; text-wrap:balance">Toda época produz seus próprios desafios.</h2>
+        <div style="width:88px; height:6px; margin-top:26px; background:linear-gradient(90deg,#098C40,#FAD200,#D10504); border-radius:3px"></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:22px; font-size:clamp(16px,1.4vw,18.5px); line-height:1.72; color:#2a3a55">
+        <p data-reveal="" data-delay="80" style="margin:0; text-wrap:pretty">Toda geração é chamada a resolver problemas que não escolheu, mas que não pode ignorar. A grande tarefa da política consiste em compreender a realidade do seu tempo e transformá-la em ação coletiva.</p>
+        <p data-reveal="" data-delay="160" style="margin:0; text-wrap:pretty">O Brasil atravessa a crise mundial de representação que desafia as instituições dos estados democráticos de direito e enfraquece a confiança dos cidadãos na política. Milhões de brasileiros sentem-se distantes dos partidos, das decisões públicas e dos espaços de poder.</p>
+        <p data-reveal="" data-delay="240" style="margin:0; text-wrap:pretty">Ao mesmo tempo, o país enfrenta desafios históricos que, apesar de básicos, permanecem sem solução: desigualdades educacionais profundas, fragilidades na saúde pública, desindustrialização, baixa produtividade econômica, concentração regional do desenvolvimento e crescente descrença nas autoridades.</p>
+        <p data-reveal="" data-delay="320" style="margin:0; font-family:Archivo,sans-serif; font-weight:700; font-size:clamp(19px,1.9vw,25px); line-height:1.4; color:#003B77; text-wrap:pretty">Responder a esses desafios exige mais do que renovação de nomes. Exige renovação de modelos, métodos e práticas políticas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(80px,10vw,140px) clamp(20px,6vw,80px); background:#003B77; color:#fff; position:relative; overflow:hidden">
+    <div style="max-width:1180px; margin:0 auto">
+      <div data-reveal="" style="max-width:720px">
+        <p style="margin:0; font-family:Archivo,sans-serif; font-size:12px; font-weight:800; letter-spacing:.3em; text-transform:uppercase; color:#FAD200">Herança trabalhista</p>
+        <h2 style="margin:14px 0 0; font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(30px,4.2vw,54px); line-height:1.04; letter-spacing:-.02em; color:#fff; text-wrap:balance">Um patrimônio intelectual para a tarefa de hoje</h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:clamp(38px,5vw,60px)">
+        <article data-reveal="" data-delay="0" style="padding:28px 24px 30px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-top:4px solid #098C40; border-radius:4px; transition:transform .3s ease, background .3s ease" style-hover="transform:translateY(-8px); background:rgba(255,255,255,.11)">
+          <h3 style="margin:0; font-family:Archivo,sans-serif; font-weight:800; font-size:21px; color:#FAD200">Getúlio Vargas</h3>
+          <p style="margin:12px 0 0; font-size:16px; line-height:1.62; color:rgba(255,255,255,.82); text-wrap:pretty">A soberania nacional depende da capacidade do Estado de promover o desenvolvimento.</p>
+        </article>
+        <article data-reveal="" data-delay="90" style="padding:28px 24px 30px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-top:4px solid #FAD200; border-radius:4px; transition:transform .3s ease, background .3s ease" style-hover="transform:translateY(-8px); background:rgba(255,255,255,.11)">
+          <h3 style="margin:0; font-family:Archivo,sans-serif; font-weight:800; font-size:21px; color:#FAD200">Alberto Pasqualini</h3>
+          <p style="margin:12px 0 0; font-size:16px; line-height:1.62; color:rgba(255,255,255,.82); text-wrap:pretty">A política deve estar a serviço da justiça social.</p>
+        </article>
+        <article data-reveal="" data-delay="180" style="padding:28px 24px 30px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-top:4px solid #D10504; border-radius:4px; transition:transform .3s ease, background .3s ease" style-hover="transform:translateY(-8px); background:rgba(255,255,255,.11)">
+          <h3 style="margin:0; font-family:Archivo,sans-serif; font-weight:800; font-size:21px; color:#FAD200">João Goulart</h3>
+          <p style="margin:12px 0 0; font-size:16px; line-height:1.62; color:rgba(255,255,255,.82); text-wrap:pretty">Reformas estruturais são indispensáveis para expandir a soberania.</p>
+        </article>
+        <article data-reveal="" data-delay="270" style="padding:28px 24px 30px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-top:4px solid #098C40; border-radius:4px; transition:transform .3s ease, background .3s ease" style-hover="transform:translateY(-8px); background:rgba(255,255,255,.11)">
+          <h3 style="margin:0; font-family:Archivo,sans-serif; font-weight:800; font-size:21px; color:#FAD200">Leonel Brizola</h3>
+          <p style="margin:12px 0 0; font-size:16px; line-height:1.62; color:rgba(255,255,255,.82); text-wrap:pretty">A defesa intransigente da nossa cultura política conquista corações e mentes.</p>
+        </article>
+        <article data-reveal="" data-delay="360" style="padding:28px 24px 30px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-top:4px solid #FAD200; border-radius:4px; transition:transform .3s ease, background .3s ease" style-hover="transform:translateY(-8px); background:rgba(255,255,255,.11)">
+          <h3 style="margin:0; font-family:Archivo,sans-serif; font-weight:800; font-size:21px; color:#FAD200">Darcy Ribeiro</h3>
+          <p style="margin:12px 0 0; font-size:16px; line-height:1.62; color:rgba(255,255,255,.82); text-wrap:pretty">O Brasil só realizará seu potencial civilizatório com a educação como prioridade absoluta.</p>
+        </article>
+      </div>
+
+      <p data-reveal="" style="margin:clamp(38px,5vw,56px) 0 0; max-width:880px; font-size:clamp(16px,1.4vw,18.5px); line-height:1.72; color:rgba(255,255,255,.78); text-wrap:pretty">No século XXI, essas tradições precisam ser atualizadas diante de novos desafios: a revolução tecnológica, a inteligência artificial, a automação do trabalho, a fragmentação da esfera pública, a crise de representação democrática, a financeirização da economia e a reorganização do sistema internacional.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(80px,10vw,140px) clamp(20px,6vw,80px); background:#12203a; color:#fff">
+    <div style="max-width:1180px; margin:0 auto">
+      <div data-reveal="" style="max-width:760px">
+        <p style="margin:0; font-family:Archivo,sans-serif; font-size:12px; font-weight:800; letter-spacing:.3em; text-transform:uppercase; color:#ff6b5e">Contraste e clareza</p>
+        <h2 style="margin:14px 0 0; font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(30px,4.2vw,54px); line-height:1.04; letter-spacing:-.02em; text-wrap:balance">Contra o que lutamos</h2>
+        <p style="margin:16px 0 0; font-size:clamp(16px,1.4vw,18.5px); line-height:1.7; color:rgba(255,255,255,.7); text-wrap:pretty">Cada eixo do programa nomeia o seu opositor. Passe o cursor para ver o que está em jogo.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-top:clamp(38px,5vw,58px)">
+        <article data-reveal="" data-delay="0" style="position:relative; padding:34px 26px; background:#1a2c4d; border-left:5px solid #D10504; border-radius:3px; overflow:hidden; transition:background .3s ease, transform .3s ease" style-hover="background:#D10504; transform:translateY(-6px)">
+          <span style="font-family:Archivo,sans-serif; font-weight:900; font-size:46px; line-height:1; color:rgba(255,255,255,.18)">01</span>
+          <h3 style="margin:10px 0 0; font-family:Archivo,sans-serif; font-weight:800; font-size:22px; line-height:1.16">O Sucateamento Educacional</h3>
+          <p style="margin:12px 0 0; font-size:15.5px; line-height:1.62; color:rgba(255,255,255,.82); text-wrap:pretty">Transforma a educação integral em um nome sem o investimento e a dignidade concebidos por Darcy Ribeiro e Brizola.</p>
+        </article>
+        <article data-reveal="" data-delay="90" style="position:relative; padding:34px 26px; background:#1a2c4d; border-left:5px solid #D10504; border-radius:3px; overflow:hidden; transition:background .3s ease, transform .3s ease" style-hover="background:#D10504; transform:translateY(-6px)">
+          <span style="font-family:Archivo,sans-serif; font-weight:900; font-size:46px; line-height:1; color:rgba(255,255,255,.18)">02</span>
+          <h3 style="margin:10px 0 0; font-family:Archivo,sans-serif; font-weight:800; font-size:22px; line-height:1.16">O Mercado da Doença</h3>
+          <p style="margin:12px 0 0; font-size:15.5px; line-height:1.62; color:rgba(255,255,255,.82); text-wrap:pretty">Os interesses que lucram com a precariedade da saúde pública, a dependência tecnológica externa e a ausência de planejamento sanitário nacional.</p>
+        </article>
+        <article data-reveal="" data-delay="180" style="position:relative; padding:34px 26px; background:#1a2c4d; border-left:5px solid #D10504; border-radius:3px; overflow:hidden; transition:background .3s ease, transform .3s ease" style-hover="background:#D10504; transform:translateY(-6px)">
+          <span style="font-family:Archivo,sans-serif; font-weight:900; font-size:46px; line-height:1; color:rgba(255,255,255,.18)">03</span>
+          <h3 style="margin:10px 0 0; font-family:Archivo,sans-serif; font-weight:800; font-size:22px; line-height:1.16">O Coronelismo Partidário</h3>
+          <p style="margin:12px 0 0; font-size:15.5px; line-height:1.62; color:rgba(255,255,255,.82); text-wrap:pretty">Dirigentes que transformaram partidos em feudos eleitorais, concentrando poder, recursos e decisões nas mãos de poucos.</p>
+        </article>
+        <article data-reveal="" data-delay="270" style="position:relative; padding:34px 26px; background:#1a2c4d; border-left:5px solid #D10504; border-radius:3px; overflow:hidden; transition:background .3s ease, transform .3s ease" style-hover="background:#D10504; transform:translateY(-6px)">
+          <span style="font-family:Archivo,sans-serif; font-weight:900; font-size:46px; line-height:1; color:rgba(255,255,255,.18)">04</span>
+          <h3 style="margin:10px 0 0; font-family:Archivo,sans-serif; font-weight:800; font-size:22px; line-height:1.16">O Neoliberalismo Predatório</h3>
+          <p style="margin:12px 0 0; font-size:15.5px; line-height:1.62; color:rgba(255,255,255,.82); text-wrap:pretty">Visa o sucateamento e a privatização dos ativos nacionais.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="eixos" style="padding:clamp(80px,10vw,120px) clamp(20px,6vw,80px) 20px; background:#F4F6FA; text-align:center">
+    <div data-reveal="" style="max-width:820px; margin:0 auto">
+      <p style="margin:0; font-family:Archivo,sans-serif; font-size:12px; font-weight:800; letter-spacing:.3em; text-transform:uppercase; color:#098C40">O programa</p>
+      <h2 style="margin:14px 0 0; font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(32px,5vw,64px); line-height:1; letter-spacing:-.025em; color:#003B77; text-wrap:balance">Quatro eixos para uma nova política</h2>
+      <p style="margin:18px 0 0; font-size:clamp(16px,1.4vw,18.5px); line-height:1.7; color:#4a5a75; text-wrap:pretty">Clique em cada proposta para abrir as medidas concretas.</p>
+    </div>
+  </section>
+
+  <div data-eixonav="" style="position:sticky; top:72px; z-index:120; display:flex; justify-content:center; padding:0 16px 6px; pointer-events:none">
+    <div style="display:flex; gap:6px; flex-wrap:wrap; justify-content:center; padding:7px; background:rgba(255,255,255,.92); backdrop-filter:blur(10px); border:1px solid #dde4ef; border-radius:999px; box-shadow:0 10px 30px rgba(0,59,119,.12); pointer-events:auto">
+      <a href="#eixo-1" data-pill="eixo-1" style="font-family:Archivo,sans-serif; font-size:12.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#4a5a75; padding:9px 16px; border-radius:999px; transition:background .25s, color .25s">I · Educação</a>
+      <a href="#eixo-2" data-pill="eixo-2" style="font-family:Archivo,sans-serif; font-size:12.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#4a5a75; padding:9px 16px; border-radius:999px; transition:background .25s, color .25s">II · Saúde</a>
+      <a href="#eixo-3" data-pill="eixo-3" style="font-family:Archivo,sans-serif; font-size:12.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#4a5a75; padding:9px 16px; border-radius:999px; transition:background .25s, color .25s">III · Democracia</a>
+      <a href="#eixo-4" data-pill="eixo-4" style="font-family:Archivo,sans-serif; font-size:12.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#4a5a75; padding:9px 16px; border-radius:999px; transition:background .25s, color .25s">IV · Soberania</a>
+    </div>
+  </div>
+
+  <section id="eixo-1" data-section="" style="scroll-margin-top:130px; padding:clamp(60px,8vw,110px) clamp(20px,6vw,80px); background:#F4F6FA">
+    <div style="max-width:1180px; margin:0 auto">
+      <div data-reveal="" style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,34px); border-bottom:3px solid #098C40; padding-bottom:26px">
+        <span style="font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(48px,9vw,120px); line-height:.8; color:#098C40; letter-spacing:-.04em">I</span>
+        <div>
+          <h2 style="margin:0; font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(26px,3.6vw,46px); line-height:1.02; letter-spacing:-.02em; color:#003B77; text-wrap:balance">Educação para o século XXI</h2>
+          <p style="margin:12px 0 0; max-width:720px; font-size:clamp(16px,1.4vw,18.5px); line-height:1.68; color:#4a5a75; text-wrap:pretty">Se a escola pública foi a grande questão nacional de Darcy Ribeiro e Leonel Brizola, ela continua sendo a grande questão nacional do século XXI. O novo desenvolvimentismo brasileiro deve começar pela formação de inteligência nacional.</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; margin-top:34px">
+        <article data-reveal="" data-acc="" style="background:#fff; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#098C40">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#098C40">01</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Novo Plano Nacional dos CIEPs</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">Retomar a educação integral como política de Estado, no Rio de Janeiro e no Brasil, para reduzir a evasão escolar, melhorar a sociabilidade, estabelecer laços comunitários e reduzir a violência juvenil.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Lei Nacional de Expansão do Investimento na Educação Integral — alimentação, cultura, esporte, ciência e saúde, não apenas mais carga horária.</li>
+                <li>Vinculação prioritária de recursos federais.</li>
+                <li>Linhas especiais de financiamento para estados e municípios.</li>
+                <li>Ampliação do Programa Mais Educação.</li>
+                <li>Criação de fundos para atividades culturais e esportivas.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="80" data-acc="" style="background:#fff; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#098C40">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#098C40">02</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Plano Nacional de Alfabetização Digital</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">Milhões de jovens concluem a educação básica sem domínio das tecnologias digitais. É preciso levar programação, ciência de dados e tecnologias digitais à rede pública, para que essas capacidades não fiquem concentradas na elite.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Inserção obrigatória da alfabetização digital na Base Nacional Comum.</li>
+                <li>Investimentos em laboratórios tecnológicos.</li>
+                <li>Introdução gradual de robótica educacional.</li>
+                <li>Ensino de programação desde o ensino fundamental.</li>
+                <li>Parcerias entre escolas técnicas e universidades.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="160" data-acc="" style="background:#fff; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#098C40">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#098C40">03</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Valorização dos Professores</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">Enfrentar a escassez de docentes não só pela qualidade do ensino, mas pela melhoria das condições laborais da categoria.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Cumprimento efetivo do piso nacional.</li>
+                <li>Plano nacional de formação continuada.</li>
+                <li>Incentivos para atuação em regiões vulneráveis.</li>
+                <li>Carreira nacional do magistério.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="240" data-acc="" style="background:#fff; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#098C40">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#098C40">04</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Universidade e Desenvolvimento Nacional</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Ampliação do financiamento à pesquisa.</li>
+                <li>Integração entre universidades e setor produtivo.</li>
+                <li>Incentivo à inovação tecnológica nacional.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="eixo-2" data-section="" style="scroll-margin-top:130px; padding:clamp(60px,8vw,110px) clamp(20px,6vw,80px); background:#fff">
+    <div style="max-width:1180px; margin:0 auto">
+      <div data-reveal="" style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,34px); border-bottom:3px solid #D10504; padding-bottom:26px">
+        <span style="font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(48px,9vw,120px); line-height:.8; color:#D10504; letter-spacing:-.04em">II</span>
+        <div>
+          <h2 style="margin:0; font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(26px,3.6vw,46px); line-height:1.02; letter-spacing:-.02em; color:#003B77; text-wrap:balance">Saúde pública e defesa do SUS</h2>
+          <p style="margin:12px 0 0; max-width:720px; font-size:clamp(16px,1.4vw,18.5px); line-height:1.68; color:#4a5a75; text-wrap:pretty">Vivemos mais, mas nem sempre vivemos melhor. Envelhecimento populacional, doenças crônicas, transtornos mentais e os impactos da vida digital criam novas demandas. Como médico sanitarista, compreendo que fortalecer o SUS é uma questão de soberania nacional.</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; margin-top:34px">
+        <article data-reveal="" data-acc="" style="background:#F7F9FC; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#D10504">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#D10504">01</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Fortalecimento da Atenção Primária</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">Grande parte dos problemas de saúde poderia ser resolvida antes de chegar aos hospitais. Ampliar a cobertura da Estratégia Saúde da Família garante menor pressão hospitalar e melhores indicadores.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Ampliação de recursos federais.</li>
+                <li>Incentivos para fixação de profissionais.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="80" data-acc="" style="background:#F7F9FC; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#D10504">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#D10504">02</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Prontuário Único Nacional</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">O sistema de informações do SUS permanece fragmentado. É preciso criar integração nacional de dados clínicos.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Lei de interoperabilidade dos sistemas de saúde.</li>
+                <li>Plataforma digital nacional.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="160" data-acc="" style="background:#F7F9FC; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#D10504">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#D10504">03</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Complexo Econômico-Industrial da Saúde</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">Reduzir a dependência externa da nossa saúde, garantindo soberania sanitária, empregos qualificados e preparo para emergências.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Incentivos à produção nacional de medicamentos e insumos.</li>
+                <li>Expansão da pesquisa biomédica e fortalecimento da Fiocruz.</li>
+                <li>Estoques estratégicos nacionais.</li>
+                <li>Centro permanente de monitoramento epidemiológico.</li>
+                <li>Investimento em vacinas e pesquisa.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="240" data-acc="" style="background:#F7F9FC; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#D10504">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#D10504">04</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Saúde Mental como Prioridade Nacional</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Ampliação dos CAPS.</li>
+                <li>Programas de prevenção ao suicídio.</li>
+                <li>Atendimento psicológico na atenção básica.</li>
+                <li>Política nacional de envelhecimento ativo.</li>
+                <li>Saúde mental nas escolas.</li>
+                <li>Combate ao envelhecimento solitário.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="eixo-3" data-section="" style="scroll-margin-top:130px; padding:clamp(60px,8vw,110px) clamp(20px,6vw,80px); background:#F4F6FA">
+    <div style="max-width:1180px; margin:0 auto">
+      <div data-reveal="" style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,34px); border-bottom:3px solid #FAD200; padding-bottom:26px">
+        <span style="font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(48px,9vw,120px); line-height:.8; color:#e0bd00; letter-spacing:-.04em">III</span>
+        <div>
+          <h2 style="margin:0; font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(26px,3.6vw,46px); line-height:1.02; letter-spacing:-.02em; color:#003B77; text-wrap:balance">Redemocratização partidária</h2>
+          <p style="margin:12px 0 0; max-width:720px; font-size:clamp(16px,1.4vw,18.5px); line-height:1.68; color:#4a5a75; text-wrap:pretty">No Brasil, a redemocratização foi incompleta e não contempla o coração do regime: os partidos políticos. Eles devem ser instrumentos de participação cidadã, e a juventude deve encontrar espaço para influenciar decisões.</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; margin-top:34px">
+        <article data-reveal="" data-acc="" style="background:#fff; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#FAD200">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#c9a900">01</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Estatuto Nacional da Democracia Partidária</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">Muitos partidos apresentam estruturas excessivamente centralizadas que impedem legitimidade e renovação de lideranças. É preciso fortalecer a participação dos filiados, inclusive na escolha dos candidatos.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Eleições internas periódicas com voto direto dos filiados.</li>
+                <li>Primárias obrigatórias para partidos que recebem fundo eleitoral.</li>
+                <li>Transparência dos processos decisórios e prestação pública de contas.</li>
+                <li>Alteração da legislação eleitoral e da natureza jurídica dos partidos, que devem deixar de ser instituições de direito privado.</li>
+                <li>Limitação de reeleições para presidentes partidários.</li>
+                <li>Regulamentação pelo TSE.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="80" data-acc="" style="background:#fff; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#FAD200">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#c9a900">02</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Plataforma Nacional de Participação Digital</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Consultas eletrônicas e deliberações digitais.</li>
+                <li>Formação política online.</li>
+                <li>Divulgação simplificada de receitas e despesas.</li>
+                <li>Orçamento participativo digital nacional.</li>
+                <li>Portal nacional de acompanhamento dos recursos partidários.</li>
+                <li>Metas por projeto e fiscalização rigorosa da atividade parlamentar.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="160" data-acc="" style="background:#fff; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#FAD200">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#c9a900">03</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Expansão da Transparência</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">O principal problema da política brasileira não é a falta de discursos. É a escassez de resultados. A multiplicação das palavras não foi acompanhada pela ampliação da capacidade de realização.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Mecanismos permanentes de avaliação de políticas públicas.</li>
+                <li>Transparência obrigatória de metas e indicadores governamentais.</li>
+                <li>Participação cidadã no acompanhamento dos gastos públicos.</li>
+                <li>Fortalecimento dos órgãos de planejamento estratégico do Estado.</li>
+                <li>Modernização da administração pública por tecnologias digitais.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="240" data-acc="" style="background:#fff; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#FAD200">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#c9a900">04</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Juventude Politizada e Política</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">A crise da democracia também é uma crise geracional. Nunca os jovens tiveram tantos meios de expressão e tão pouca influência sobre as decisões que moldam seu futuro.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Primeiro emprego tecnológico e crédito para jovens empreendedores.</li>
+                <li>Serviço civil voluntário nacional.</li>
+                <li>Moradia estudantil e bolsas de permanência universitária.</li>
+                <li>Programa nacional de educação para cidadania.</li>
+                <li>Cursos gratuitos de formação política, com capacitação em orçamento público e legislação.</li>
+                <li>Fortalecimento do Conselho Nacional da Juventude e dos movimentos de juventude.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="eixo-4" data-section="" style="scroll-margin-top:130px; padding:clamp(60px,8vw,110px) clamp(20px,6vw,80px); background:#fff">
+    <div style="max-width:1180px; margin:0 auto">
+      <div data-reveal="" style="display:flex; align-items:flex-start; gap:clamp(16px,3vw,34px); border-bottom:3px solid #003B77; padding-bottom:26px">
+        <span style="font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(48px,9vw,120px); line-height:.8; color:#003B77; letter-spacing:-.04em">IV</span>
+        <div>
+          <h2 style="margin:0; font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(26px,3.6vw,46px); line-height:1.02; letter-spacing:-.02em; color:#003B77; text-wrap:balance">Soberania e trabalho</h2>
+          <p style="margin:12px 0 0; max-width:720px; font-size:clamp(16px,1.4vw,18.5px); line-height:1.68; color:#4a5a75; text-wrap:pretty">A independência econômica do século XXI depende da capacidade tecnológica. Nenhuma nação alcançou desenvolvimento sustentado sem domínio de tecnologias estratégicas. O Brasil precisa recuperar sua capacidade de planejar o futuro.</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; margin-top:34px">
+        <article data-reveal="" data-acc="" style="background:#F7F9FC; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#003B77">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#003B77">01</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Nova Política Nacional de Reindustrialização</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">O Brasil perdeu participação industrial nas últimas décadas. Precisamos reconstruir a capacidade produtiva nacional e combater a dependência tecnológica.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Crédito produtivo e compras governamentais estratégicas.</li>
+                <li>Política nacional de inteligência artificial.</li>
+                <li>Programa brasileiro de semicondutores.</li>
+                <li>Incentivos à inovação produtiva e fortalecimento da pesquisa científica.</li>
+                <li>Ampliação da infraestrutura digital e modernização logística nacional.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="80" data-acc="" style="background:#F7F9FC; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#003B77">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#003B77">02</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Trabalhismo Brasileiro do Século XXI</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">Milhões de brasileiros trabalham sem vínculos tradicionais. Aplicativos substituem empresas, algoritmos substituem supervisores. O desafio contemporâneo consiste em proteger o trabalhador sem impedir a inovação.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Proteção aos trabalhadores diante da automação crescente.</li>
+                <li>Soberania digital: vigilância sobre o impacto da IA e dos sistemas de pagamento, como o PIX, para que permaneçam ativos públicos.</li>
+                <li>Estatuto Nacional dos Trabalhadores de Plataformas.</li>
+                <li>Previdência adaptada às novas formas de trabalho e seguro social para intermitentes.</li>
+                <li>Transparência algorítmica nas plataformas digitais.</li>
+                <li>Direito à qualificação permanente e incentivos à economia cooperativa.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal="" data-delay="160" data-acc="" style="background:#F7F9FC; border:1px solid #e2e8f2; border-radius:6px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease" style-hover="box-shadow:0 16px 36px rgba(0,59,119,.1); border-color:#003B77">
+          <button data-acchead="" style="display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; padding:26px 24px; background:none; border:0; cursor:pointer; text-align:left; font:inherit">
+            <span style="display:flex; align-items:baseline; gap:14px"><span style="font-family:Archivo,sans-serif; font-weight:900; font-size:15px; color:#003B77">03</span><span style="font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(18px,1.8vw,22px); line-height:1.2; color:#003B77">Economia do Mar</span></span>
+            <span data-chev="" style="flex:none; width:26px; height:26px; border-radius:50%; background:#eef3fa; color:#003B77; font-size:16px; line-height:26px; text-align:center; transition:transform .35s ease, background .25s">+</span>
+          </button>
+          <div data-detail="" style="max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .35s ease">
+            <div style="padding:0 24px 28px">
+              <p style="margin:0 0 16px; font-size:16px; line-height:1.68; color:#4a5a75; text-wrap:pretty">O Rio de Janeiro possui vocação estratégica ligada ao litoral.</p>
+              <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.55; color:#2a3a55">
+                <li>Indústria naval.</li>
+                <li>Pesca sustentável.</li>
+                <li>Energia offshore.</li>
+                <li>Pesquisa oceanográfica.</li>
+                <li>Revitalização da Baía de Guanabara.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative; padding:clamp(80px,10vw,150px) clamp(20px,6vw,80px); background:#003B77; overflow:hidden">
+    <div style="position:absolute; inset:0; opacity:.18; pointer-events:none">
+      <svg viewBox="0 0 1200 400" preserveAspectRatio="none" style="width:100%; height:100%">
+        <path d="M0,250 C250,150 450,320 700,240 C920,170 1060,250 1200,200 L1200,400 L0,400 Z" fill="#098C40"></path>
+        <path d="M0,290 C260,200 460,360 720,280 C940,215 1080,290 1200,250 L1200,400 L0,400 Z" fill="#FAD200"></path>
+      </svg>
+    </div>
+    <blockquote data-reveal="" style="position:relative; max-width:980px; margin:0 auto; text-align:center">
+      <p style="margin:0; font-family:Archivo,sans-serif; font-weight:800; font-size:clamp(24px,3.4vw,46px); line-height:1.2; letter-spacing:-.02em; color:#fff; text-wrap:balance">O desenvolvimento não é um fim em si mesmo. O objetivo da economia é garantir ao povo brasileiro <span style="color:#FAD200">trabalho digno, segurança material, acesso ao conhecimento e liberdade</span> para construir seu próprio destino.</p>
+      <footer style="margin-top:28px; font-family:Archivo,sans-serif; font-size:13px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:rgba(255,255,255,.65)">Trabalhismo brasileiro do século XXI</footer>
+    </blockquote>
+  </section>
+
+  <section id="assinatura" style="scroll-margin-top:120px; padding:clamp(80px,10vw,140px) clamp(20px,6vw,80px); background:#F4F6FA; text-align:center">
+    <div data-reveal="" style="max-width:820px; margin:0 auto; display:flex; flex-direction:column; align-items:center">
+      <img src="assets/logo.png" alt="João Leonel Brizola" style="width:min(280px,60vw); height:auto; display:block">
+      <h2 style="margin:34px 0 0; font-family:Archivo,sans-serif; font-weight:900; font-size:clamp(28px,4vw,52px); line-height:1.04; letter-spacing:-.02em; color:#003B77; text-wrap:balance">Bases e sugestões. A política se faz em conjunto.</h2>
+      <p style="margin:18px 0 0; font-size:clamp(16px,1.4vw,18.5px); line-height:1.7; color:#4a5a75; text-wrap:pretty">Este documento consolida a identidade política e as diretrizes programáticas da pré-candidatura do médico sanitarista João Leonel Brizola (PSB/RJ), unindo a herança de Leonel Brizola à renovação nacional via trabalhismo brasileiro.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:34px">
+        <a href="#eixos" style="font-family:Archivo,sans-serif; font-weight:800; font-size:15px; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:#003B77; padding:16px 30px; border-radius:999px; transition:transform .25s, box-shadow .25s" style-hover="transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,59,119,.3); color:#fff">Rever os eixos</a>
+        <a href="#topo" style="font-family:Archivo,sans-serif; font-weight:800; font-size:15px; letter-spacing:.06em; text-transform:uppercase; color:#003B77; border:2px solid #c9d5e6; padding:14px 30px; border-radius:999px; transition:border-color .25s, background .25s" style-hover="border-color:#003B77; background:#fff; color:#003B77">Voltar ao topo</a>
+      </div>
+      <div style="margin-top:44px; padding-top:30px; border-top:1px solid #dde4ef; width:100%">
+        <p style="margin:0; font-family:Archivo,sans-serif; font-size:12px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#8b9bb4">Assinado por</p>
+        <p style="margin:8px 0 0; font-family:Archivo,sans-serif; font-weight:800; font-size:20px; color:#003B77">Leandro Nogueira Louro</p>
+        <p style="margin:4px 0 0; font-size:15px; color:#4a5a75">Coordenação Geral e Política</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:34px clamp(20px,6vw,80px); background:#002A55; display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between">
+    <p style="margin:0; font-size:14px; color:rgba(255,255,255,.6)">© 2026 João Leonel Brizola · PSB/RJ</p>
+    <div style="display:flex; gap:6px; align-items:center">
+      <span style="width:34px; height:6px; background:#098C40; border-radius:3px"></span>
+      <span style="width:34px; height:6px; background:#FAD200; border-radius:3px"></span>
+      <span style="width:34px; height:6px; background:#D10504; border-radius:3px"></span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;animacoes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamento&quot;},&quot;barraProgresso&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamento&quot;},&quot;abrirPropostas&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamento&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = this.el || document;
+    const q = (s) => Array.from(root.querySelectorAll(s));
+    const animate = this.props.animacoes ?? true;
+    const showBar = this.props.barraProgresso ?? true;
+    const openAll = this.props.abrirPropostas ?? false;
+
+    // progress bar
+    const bar = root.querySelector('[data-progress]');
+    if (bar && !showBar) bar.style.display = 'none';
+
+    // reveal on scroll
+    const reveals = q('[data-reveal]');
+    if (animate && 'IntersectionObserver' in window) {
+      reveals.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(26px)';
+        el.style.transition = 'opacity .75s cubic-bezier(.22,.8,.3,1), transform .75s cubic-bezier(.22,.8,.3,1)';
+      });
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const d = parseInt(e.target.getAttribute('data-delay') || '0', 10);
+          setTimeout(() => { e.target.style.opacity = '1'; e.target.style.transform = 'none'; }, d);
+          this._io.unobserve(e.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      reveals.forEach(el => this._io.observe(el));
+    }
+
+    // accordions
+    const setOpen = (card, open) => {
+      const detail = card.querySelector('[data-detail]');
+      const chev = card.querySelector('[data-chev]');
+      if (!detail) return;
+      if (open) {
+        detail.style.maxHeight = detail.scrollHeight + 40 + 'px';
+        detail.style.opacity = '1';
+        if (chev) { chev.style.transform = 'rotate(135deg)'; chev.style.background = '#003B77'; chev.style.color = '#fff'; }
+      } else {
+        detail.style.maxHeight = '0px';
+        detail.style.opacity = '0';
+        if (chev) { chev.style.transform = 'none'; chev.style.background = '#eef3fa'; chev.style.color = '#003B77'; }
+      }
+      card.dataset.open = open ? '1' : '0';
+    };
+    this._cards = q('[data-acc]');
+    this._cards.forEach(card => {
+      const head = card.querySelector('[data-acchead]');
+      if (head) head.addEventListener('click', () => setOpen(card, card.dataset.open !== '1'));
+      if (openAll) setTimeout(() => setOpen(card, true), 60);
+    });
+    this._resize = () => this._cards.forEach(c => { if (c.dataset.open === '1') setOpen(c, true); });
+    window.addEventListener('resize', this._resize);
+
+    // header + scrollspy
+    const nav = root.querySelector('[data-nav]');
+    const navLogo = root.querySelector('[data-navlogo]');
+    const links = q('[data-spy]');
+    const pills = q('[data-pill]');
+    const sections = q('[data-section]');
+    const wave = root.querySelector('[data-wave]');
+    const doc = document.scrollingElement || document.documentElement;
+
+    this._onScroll = () => {
+      const y = window.scrollY || doc.scrollTop;
+      if (bar && showBar) {
+        const max = doc.scrollHeight - window.innerHeight;
+        bar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+      }
+      if (nav) {
+        const solid = y > 80;
+        nav.style.background = solid ? 'rgba(0,42,85,.92)' : 'rgba(0,42,85,0)';
+        nav.style.backdropFilter = solid ? 'blur(12px)' : 'blur(0px)';
+        nav.style.boxShadow = solid ? '0 6px 24px rgba(0,0,0,.18)' : 'none';
+        nav.style.paddingTop = solid ? '9px' : '14px';
+        nav.style.paddingBottom = solid ? '9px' : '14px';
+      }
+      if (navLogo) navLogo.style.height = (y > 80 ? 34 : 44) + 'px';
+      if (wave && animate) wave.style.transform = 'translateY(' + Math.min(y * 0.18, 120) + 'px)';
+
+      let active = '';
+      sections.forEach(s => { const r = s.getBoundingClientRect(); if (r.top <= 220 && r.bottom > 220) active = s.id; });
+      links.forEach(a => { a.style.color = a.getAttribute('data-spy') === active ? '#FAD200' : 'rgba(255,255,255,.72)'; });
+      pills.forEach(a => {
+        const on = a.getAttribute('data-pill') === active;
+        a.style.background = on ? '#003B77' : 'transparent';
+        a.style.color = on ? '#fff' : '#4a5a75';
+      });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    requestAnimationFrame(() => this._onScroll());
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._resize);
+    if (this._io) this._io.disconnect();
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
